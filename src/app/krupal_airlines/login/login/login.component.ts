@@ -157,6 +157,9 @@ islogedin(){
    onRegister(){
     console.log("register")
     console.log(this.registerForm.value);
+    if(this.registerForm.value.email=="admin@gmail.com"){
+      this.registerForm.value.role="admin"
+    }
     this.registerForm.value.password=btoa(this.registerForm.value.password)
     this.service.registerUser(this.registerForm.value).subscribe(
       data=>{
